@@ -1,0 +1,565 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOLEVA - Step Into Your Style</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #faf9f6;
+            color: #252525;
+        }
+
+        /* HEADER */
+        header {
+            background: #ffffff;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px #00000010;
+        }
+
+        .logo {
+            font-size: 27px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            color: #d66b36;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            margin-left: 25px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #d66b36;
+        }
+
+        /* BERANDA */
+        .hero {
+            min-height: 500px;
+            padding: 80px 8%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+            background: #eee9df;
+        }
+
+        .hero-text {
+            max-width: 500px;
+        }
+
+        .hero-text small {
+            color: #d66b36;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .hero-text h1 {
+            font-size: 52px;
+            margin: 20px 0;
+            line-height: 1.15;
+        }
+
+        .hero-text p {
+            line-height: 1.8;
+            color: #666;
+            margin-bottom: 25px;
+        }
+
+        .hero img {
+            width: 45%;
+            max-width: 480px;
+            border-radius: 15px;
+            object-fit: cover;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #d66b36;
+            color: white;
+            padding: 14px 28px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background: #aa4e25;
+        }
+
+        /* PRODUK */
+        section {
+            padding: 70px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #777;
+        }
+
+        .product-container {
+            display: grid;
+            grid-template-columns:
+                repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px #00000010;
+            transition: 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-7px);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-info h3 {
+            margin-bottom: 10px;
+        }
+
+        .product-info p {
+            color: #777;
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+
+        .price {
+            color: #d66b36;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        /* TENTANG */
+        #tentang {
+            background: #eee9df;
+            text-align: center;
+        }
+
+        .about-content {
+            max-width: 750px;
+            margin: auto;
+            line-height: 1.9;
+            color: #555;
+        }
+
+        .about-content h2 {
+            color: #252525;
+            margin-bottom: 20px;
+            font-size: 32px;
+        }
+
+        /* KONTAK */
+        #kontak {
+            text-align: center;
+        }
+
+        .contact-info {
+            margin-top: 25px;
+            line-height: 2.2;
+        }
+
+        .contact-info a {
+            color: #d66b36;
+            text-decoration: none;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #252525;
+            color: white;
+            padding: 30px;
+            text-align: center;
+            line-height: 1.8;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav a {
+                margin: 0 7px;
+                font-size: 12px;
+            }
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 36px;
+            }
+
+            .hero img {
+                width: 100%;
+            }
+
+            .product-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER DAN NAVIGASI -->
+    <header>
+        <div class="logo">SOLEVA.</div>
+
+        <nav>
+           <a href="#beranda">Beranda</a>
+<a href="#produk">Produk</a>
+<a href="#keranjang">Keranjang</a>
+<a href="#tentang">Tentang</a>
+<a href="#kontak">Kontak</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- BERANDA -->
+        <section class="hero" id="beranda">
+
+            <div class="hero-text">
+                <small>FIND YOUR PERFECT STEP</small>
+
+                <h1>
+                    Walk With Style,
+                    Live With Confidence.
+                </h1>
+
+                <p>
+                    Temukan sepatu favoritmu dengan
+                    desain modern, nyaman digunakan,
+                    dan cocok untuk menemani setiap
+                    aktivitas sehari-hari.
+                </p>
+
+                <a href="#produk" class="btn">
+                    Lihat Koleksi
+                </a>
+            </div>
+
+            <img
+                src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800"
+                alt="Koleksi sepatu modern">
+        </section>
+
+        <!-- PRODUK -->
+        <section id="produk">
+
+            <div class="section-title">
+                <h2>Our Collection</h2>
+                <p>
+                    Pilihan sepatu terbaik untuk
+                    melengkapi gaya sehari-harimu.
+                </p>
+            </div>
+
+            <div class="product-container">
+
+                <div class="product-card">
+                    <img
+                        src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600"
+                        alt="Sepatu sporty">
+
+                    <div class="product-info">
+                        <h3>Urban Sport</h3>
+                        <p>
+                            Sepatu sporty yang nyaman
+                            untuk aktivitas harian.
+                        </p>
+                        <div class="price">
+                            Rp299.000
+                          
+<button onclick="addToCart('Urban Sport', 299000)">
+    + Tambah ke Keranjang
+</button>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img
+                        src="https://images.unsplash.com/photo-1549298916-b41d501d3772?w=600"
+                        alt="Sepatu casual">
+
+                    <div class="product-info">
+                        <h3>Classic Casual</h3>
+                        <p>
+                            Desain simpel dan elegan
+                            untuk berbagai kesempatan.
+                        </p>
+                        <div class="price">
+                            Rp349.000
+                          
+<button onclick="addToCart('Classic Casual', 349000)">
+    + Tambah ke Keranjang
+</button>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img
+                        src="https://images.unsplash.com/photo-1460353581641-37baddab0fa2?w=600"
+                        alt="Sepatu sneakers">
+
+                    <div class="product-info">
+                        <h3>Daily Sneakers</h3>
+                        <p>
+                            Sneakers kekinian yang
+                            mudah dipadukan dengan outfit.
+                        </p>
+                        <div class="price">
+                            Rp279.000
+                          
+<button onclick="addToCart('Daily Sneakers', 279000)">
+    + Tambah ke Keranjang
+</button>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+      
+<!-- KERANJANG BELANJA -->
+<section id="keranjang">
+    <div class="section-title">
+        <h2>My Shopping Cart</h2>
+        <p>Produk pilihanmu ada di sini.</p>
+    </div>
+
+    <div id="cart-items">
+        Keranjang masih kosong.
+    </div>
+
+    <h3 style="margin-top:20px">
+        Total: Rp<span id="cart-total">0</span>
+    </h3>
+
+    <button class="btn" onclick="checkout()"
+        style="border:none; margin-top:20px">
+        Pesan Sekarang via WhatsApp
+    </button>
+</section>
+
+        <!-- TENTANG KAMI -->
+        <section id="tentang">
+
+            <div class="about-content">
+                <h2>About SOLEVA</h2>
+
+                <p>
+                    SOLEVA merupakan toko sepatu
+                    online yang menghadirkan berbagai
+                    pilihan sepatu dengan desain
+                    modern, kualitas nyaman, dan
+                    harga yang bersahabat.
+                </p>
+
+                <p>
+                    Kami percaya bahwa sepatu bukan
+                    hanya pelengkap penampilan,
+                    tetapi juga bagian dari gaya
+                    dan kepercayaan diri seseorang.
+                    Karena itu, kami berusaha
+                    menyediakan produk yang sesuai
+                    dengan kebutuhan dan gaya hidup
+                    pelanggan.
+                </p>
+            </div>
+
+        </section>
+
+        <!-- KONTAK -->
+        <section id="kontak">
+
+            <div class="section-title">
+                <h2>Get In Touch</h2>
+                <p>
+                    Ada pertanyaan atau ingin
+                    mengetahui produk kami?
+                    Hubungi SOLEVA.
+                </p>
+            </div>
+
+            <div class="contact-info">
+                <p>Email: soleva.store@gmail.com</p>
+                <p>Instagram: @soleva.store</p>
+                <p>WhatsApp: 085165968929</p>
+                <p>Lokasi: Indonesia</p>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <h3>SOLEVA.</h3>
+        <p>
+            Step Into Your Style.
+        </p>
+        <p>
+            &copy; 2026 SOLEVA Store.
+            All Rights Reserved.
+        </p>
+    </footer>
+
+  
+<script>
+let cart = [];
+
+function addToCart(name, price) {
+    let item = cart.find(p => p.name === name);
+
+    if (item) {
+        item.qty++;
+    } else {
+        cart.push({
+            name: name,
+            price: price,
+            qty: 1
+        });
+    }
+
+    updateCart();
+
+    alert(name + " berhasil ditambahkan!");
+}
+
+function updateCart() {
+    let container =
+        document.getElementById("cart-items");
+
+    let total = 0;
+
+    if (cart.length === 0) {
+        container.innerHTML =
+            "Keranjang masih kosong.";
+    } else {
+        container.innerHTML = cart.map((item, i) => {
+            let subtotal = item.price * item.qty;
+            total += subtotal;
+
+            return `
+                <div style="
+                    background:white;
+                    padding:15px;
+                    margin-bottom:10px;
+                    border-radius:10px;">
+
+                    <b>${item.name}</b>
+                    <p>Rp${subtotal.toLocaleString("id-ID")}</p>
+                    <p>Jumlah: ${item.qty}</p>
+
+                    <button onclick="removeItem(${i})">
+                        Hapus
+                    </button>
+                </div>
+            `;
+        }).join("");
+    }
+
+    document.getElementById("cart-total")
+        .innerText = total.toLocaleString("id-ID");
+}
+
+function removeItem(index) {
+    cart.splice(index, 1);
+    updateCart();
+}
+
+function checkout() {
+    if (cart.length === 0) {
+        alert("Keranjang masih kosong!");
+        return;
+    }
+
+    let pesan = "Halo SOLEVA, saya ingin memesan:\n\n";
+    let total = 0;
+
+    cart.forEach(item => {
+        let subtotal = item.price * item.qty;
+        total += subtotal;
+
+        pesan += item.name +
+            " x " + item.qty +
+            " = Rp" +
+            subtotal.toLocaleString("id-ID") +
+            "\n";
+    });
+
+    pesan += "\nTotal: Rp" +
+        total.toLocaleString("id-ID");
+
+    pesan += "\n\nMohon informasi cara pemesanannya.";
+
+    let nomor = "085165968929";
+
+    window.open(
+        "https://wa.me/" + nomor +
+        "?text=" + encodeURIComponent(pesan),
+        "_blank"
+    );
+}
+</script>
+</body>
+</html>
+
+</body>
+</html>
